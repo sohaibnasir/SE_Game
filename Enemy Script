@@ -1,0 +1,16 @@
+private var fall : boolean ;
+var player : GameObject ;
+var spawnPoint : Transform ;
+var Stomp : boolean ; 
+
+function OnTriggerEnter( other : Collider ){
+ if(!Stomp){
+   if(other.tag == "Player"){
+    Destroy(other.gameObject);
+    var P : GameObject = Instantiate(player , spawnPoint.position , Quaternion.identity);
+  var sf = Camera.main.GetComponent(SmoothFollow);
+  sf.target = P.transform;
+  
+  }
+}}
+
