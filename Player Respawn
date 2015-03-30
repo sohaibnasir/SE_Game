@@ -1,0 +1,15 @@
+var Player : GameObject;
+var spawnPoint : Transform;
+
+function OnTriggerEnter(other : Collider){
+if(other.tag == "Player"){
+Destroy(other.gameObject);
+var Player : GameObject = Instantiate(Player,spawnPoint.position, Quaternion.identity);
+Player.transform.position = spawnPoint.position;
+var sf = Camera.main.GetComponent(SmoothFollow);
+sf.target = Player.transform;
+}
+else{
+	Destroy(other.gameObject);
+}
+}
