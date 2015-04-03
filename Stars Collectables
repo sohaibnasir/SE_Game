@@ -1,0 +1,17 @@
+using UnityEngine;
+using System.Collections;
+
+public class collectables : MonoBehaviour {
+
+
+
+	void OnTriggerEnter(other : Collider){
+		if (other.tag == "Player") {
+			Destroy (this.gameObject);		
+
+				}
+
+	}
+
+
+}
